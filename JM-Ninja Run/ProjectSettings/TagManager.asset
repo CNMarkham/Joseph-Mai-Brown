@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - heart
   - coin
+  - exit
+  - Door
   layers:
   - Default
   - TransparentFX
