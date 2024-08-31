@@ -51,8 +51,10 @@ public class EnemyControls : MonoBehaviour
         if(currentAttackingTime > maxAttackingTime)// if current attack time is greater than max attack time
         {
             currentAttackingTime = 0f;
-            int rand = Random.Range(1, 7);
+            int rand = Random.Range(1, 6);
+            
             animatorEnemy.SetTrigger("Attack" + rand);
+            Debug.Log(rand);
         }
 
     }
