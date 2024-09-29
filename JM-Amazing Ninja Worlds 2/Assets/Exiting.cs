@@ -10,12 +10,12 @@ public class Exiting : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)// when something collides with the teleport pad
     {
-        Debug.Log("collision_Detecter");
-        Debug.Log($"gemGreem detecting hierarchy: {gemGreen.activeInHierarchy}");
+        Debug.Log("collision_Detecter");// debugs to check the collision for the teleport pad 
+        Debug.Log($"gemGreem detecting hierarchy: {gemGreen.activeInHierarchy}");// debug logs to check the gemgreen in the hierchary
         if (gemGreen.activeInHierarchy == false)//if the green gem is not activated in the hierarchy
         {
             
-            background.GetComponent<GameManager>().TeleportOpen(Destination); // gets the game manager component for telporting to the destination
+            background.GetComponent<GameManager>().TeleportOpen(Destination); // gets the game manager component in the background for telporting
         }
     }
 }

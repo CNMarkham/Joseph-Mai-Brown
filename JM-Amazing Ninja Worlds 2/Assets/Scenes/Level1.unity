@@ -420,7 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gem: {fileID: 468184293}
   background: {fileID: 1875767817}
-  teleportDestination: Level1_A
+  teleportDestination: Level2
 --- !u!4 &79126317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a3614c18f3e6c7142832df541b2a093c, type: 3}
@@ -27042,7 +27042,7 @@ Transform:
   m_GameObject: {fileID: 1621597827}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.440001, y: 7.5038776, z: -42.2}
+  m_LocalPosition: {x: 15.724817, y: 7.5038776, z: -42.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
