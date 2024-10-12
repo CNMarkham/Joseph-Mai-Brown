@@ -19,13 +19,19 @@ public class InterfaceManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (Input.GetButton("Submit") && dialogueBox.activeInHierarchy)//checks if gets the button submit and the dialogue box is active
+        {
+            dialogueBox.SetActive(false); //makes the dialogue box not visible
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetButton("Submit"))//if the button is pressed submit than sets it to false
+        {
+            dialogueBox.SetActive(false);
+        }
     }
 
     public void CollectibleUpdate(int item)
@@ -35,6 +41,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void ShowBox(string dialogue, int item)
     {
+        dialogueBox.SetActive(true); //makes the dialogue box visible
         if (npc.GetComponent<DialogueOpen>().begin)
         {
             scatterCoins();

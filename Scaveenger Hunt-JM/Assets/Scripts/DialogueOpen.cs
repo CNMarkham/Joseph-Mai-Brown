@@ -26,6 +26,12 @@ public class DialogueOpen : MonoBehaviour
     public void createClue()
     {
         clue = Random.Range(0, 9);
+        searchDialogue();
+    }
+
+    public void searchDialogue()// function ssearch dialogue
+    {
+        dialogue = "Hi! Can you help me find my" + collectibles[clue] + "?";// makes a dialogue to say to help find one of the collectibles in start function
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +41,7 @@ public class DialogueOpen : MonoBehaviour
             checkClue();
         }
         greeting.Play(0);
+        interfaceManager.GetComponent<InterfaceManager>().ShowBox(dialogue, clue); // will get the  interface compoennt and the showbox will sned vales of the dialogue and the clue
     }
 
     private void checkClue()
