@@ -13,6 +13,7 @@ public class DialogueOpen : MonoBehaviour
     private string[] collectibles;
     private int clue;
 
+
     private AudioSource greeting;
 
     // Start is called before the first frame update
@@ -36,9 +37,9 @@ public class DialogueOpen : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!begin && pHolding.Verify())
+        if (!begin && pHolding.Verify())// checks if the begin variable is false and the player if the player collected anything
         {
-            checkClue();
+            checkClue();// if so then will check the clue of what the player is holding
         }
         greeting.Play(0);
         interfaceManager.GetComponent<InterfaceManager>().ShowBox(dialogue, clue); // will get the  interface compoennt and the showbox will sned vales of the dialogue and the clue
@@ -48,11 +49,12 @@ public class DialogueOpen : MonoBehaviour
     {
         if (pHolding.holdValue == clue)
         {
+            dialogue = "You found my" + collectibles[clue] + "! Hooray!";
             end = true;
         }
         else
         {
-
+            dialogue = "No, that's not my" + collectibles[clue] + ".";
         }
     }
 

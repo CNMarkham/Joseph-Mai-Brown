@@ -22,6 +22,8 @@ public class Pickups : MonoBehaviour
             score++;
             scoreText.text = score.ToString();
             Destroy(other.gameObject);
+
+            Pickup.Play();
         }
     }
 }
