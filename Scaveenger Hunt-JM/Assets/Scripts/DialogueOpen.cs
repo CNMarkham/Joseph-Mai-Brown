@@ -32,7 +32,39 @@ public class DialogueOpen : MonoBehaviour
 
     public void searchDialogue()// function ssearch dialogue
     {
-        dialogue = "Hi! Can you help me find my" + collectibles[clue] + "?";// makes a dialogue to say to help find one of the collectibles in start function
+        dialogue = collectibles[clue];// makes a dialogue to say to help find one of the collectibles in start function
+        switch(clue){
+            case 0:
+                dialogue = ("Oh no, I lost my fliming machine for a show, can you help me find it?");
+                break;
+            case 1:
+                dialogue = ("Oh no, I lost my balloons for a party, can you help me find it?");
+                break;
+            case 2:
+                dialogue = ("Oh no, I lost my floaty for the beach I was going to, can you help me find it?");
+                break;
+            case 3:
+                dialogue = ("Oh no, I lost my target for archery class, can you help me find it?");
+                break;
+            case 4:
+                dialogue = ("Oh no, I lost my pipe for smoking, can you help me find it?");
+                break;
+            case 5:
+                dialogue = ("Oh no, I lost my keys for my house, can you help me find it?");
+                break;
+            case 6:
+                dialogue = ("Oh no, I lost my fishes that I caught, can you help me find it?");
+                break;
+            case 7:
+                dialogue = ("Oh no, I lost my bird house that I bought for my birds, can you help me find it?");
+                break;
+            case 8:
+                dialogue = ("Oh no, I lost my airhorn for pranking my friends, can you help me find it?");
+                break;
+            case 9:
+                dialogue = ("Oh no, I lost my birthday cake for my birthday, can you help me find it?");
+                break;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
