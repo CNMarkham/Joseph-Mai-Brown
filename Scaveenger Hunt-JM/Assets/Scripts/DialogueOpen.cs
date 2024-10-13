@@ -42,7 +42,8 @@ public class DialogueOpen : MonoBehaviour
             checkClue();// if so then will check the clue of what the player is holding
         }
         greeting.Play(0);
-        interfaceManager.GetComponent<InterfaceManager>().ShowBox(dialogue, clue); // will get the  interface compoennt and the showbox will sned vales of the dialogue and the clue
+        // will get the  interface compoennt and the showbox will sned vales of the dialogue and the clue
+        interfaceManager.GetComponent<InterfaceManager>().ShowBox(dialogue, clue); 
     }
 
     private void checkClue()

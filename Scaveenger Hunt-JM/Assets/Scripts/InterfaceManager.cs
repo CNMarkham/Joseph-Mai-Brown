@@ -13,8 +13,8 @@ public class InterfaceManager : MonoBehaviour
     public GameObject npc;
     public GameObject randomSpawn;
 
-    public Image collectibles;
-    public GameObject showSprite;
+    public Image collectibles; // public images of the collectibles
+    public GameObject showSprite; //to show the sprites on the box
 
     [SerializeField]
     private Sprite[] collectibleSource;
@@ -22,8 +22,8 @@ public class InterfaceManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogueBox.SetActive(false);
-        showSprite.SetActive(false);
+        dialogueBox.SetActive(false);//sets dialogue box to false
+        showSprite.SetActive(false);//sets showsprites to false
         if (Input.GetButton("Submit") && dialogueBox.activeInHierarchy)//checks if gets the button submit and the dialogue box is active
         {
             dialogueBox.SetActive(false); //makes the dialogue box not visible
@@ -36,14 +36,18 @@ public class InterfaceManager : MonoBehaviour
     {
         if(Input.GetButton("Submit"))//if the button is pressed submit than sets it to false
         {
-            dialogueBox.SetActive(false);
+            dialogueBox.SetActive(false);// makes it not seeable
+            if(npc.GetComponent<DialogueOpen>().end)//checks if the npc gewts the component from the script dialogue open and checks the var end to see if it is true or not if try than will load the scene 0
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
     public void CollectibleUpdate(int item)
     {
         showSprite.SetActive(true); //will set the sprite to true
-        collectibles.GetComponent<Image>().sprite = collectibleSource[item];// will get the collecgtible image
+        collectibles.GetComponent<Image>().sprite = collectibleSource[item];// will get the collectible image
     }
 
     public void ShowBox(string dialogue, int item)
