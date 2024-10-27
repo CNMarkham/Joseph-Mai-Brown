@@ -33,7 +33,7 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        hud.SetScore(currentScore);
+        hud.SetScore(currentScore);// will always make the hud set score to the current score
     }
 
     // Update is called once per frame
@@ -64,9 +64,9 @@ public class Level : MonoBehaviour
     public virtual void OnPieceCleared(GamePiece piece)
     {
         //Update Score
-        currentScore += piece.score;
+        currentScore += piece.score;// will add the piece score to the curent score
 
-        hud.SetScore(currentScore);//makes the score the cureent score
+        hud.SetScore(currentScore);//makes the new score the current score
     }
 
     protected virtual IEnumerator WaitForGridFill()
@@ -78,7 +78,7 @@ public class Level : MonoBehaviour
 
         if (didWin && !grid.IsFilling)// if didwin and gird is filling is not true
         {
-            hud.OnGameWin(currentScore);//makes the on game win to the current scire 
+            hud.OnGameWin(currentScore);//will call the ongamewin script and make isgameover to true
         }
         else
         {

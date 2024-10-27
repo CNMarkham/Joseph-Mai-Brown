@@ -10,10 +10,10 @@
     {
         type = LevelType.MOVES;
 
-        hud.SetLevelType(type);//
-        hud.SetScore(currentScore);//
-        hud.SetTarget(targetScore);//
-        hud.SetRemaining(numMoves);//
+        hud.SetLevelType(type);//calls the set level type function
+        hud.SetScore(currentScore);//calls set score which checks levels and current score
+        hud.SetTarget(targetScore);//calls set target to the target and shows target score
+        hud.SetRemaining(numMoves);//calls the set remaining which shows remaining moves
 
     }
 
@@ -21,7 +21,9 @@
     {
         base.OnMove();
 
-        movesUsed++;
+        movesUsed++;// adds one to the movews used
+
+        hud.SetRemaining(numMoves - movesUsed); // calls the remaining function and makes it the moves left as a subtracts the moves available from the moves used // also upadte the moves every time
 
         if(numMoves - movesUsed == 0)
         {
