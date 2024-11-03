@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class HUD : MonoBehaviour
 {
     public Level level;
+    public GameOver gameOver;
+
     public TMP_Text remainingText;
     public TMP_Text remainingSubtext;
     public TMP_Text targetText;
@@ -98,11 +101,17 @@ public class HUD : MonoBehaviour
 
     public void OnGameWin(int score)// function for ongame win
     {
-        isGameOver = true;// will make isGameOver true when it is called
+        gameOver.ShowWin(score, starIndex);
+
+        if (starIndex > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name, 0))// if the star index is greater than the players value previously saved
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, starIndex);//it will save the current scene tot he current score of the star Index
+        }
     }
 
     public void OnGameLose()// function for ongame lose
     {
-        isGameOver = false;// will make isgameover false when called
+        gameOver.ShowLose();
     }
+
 }
